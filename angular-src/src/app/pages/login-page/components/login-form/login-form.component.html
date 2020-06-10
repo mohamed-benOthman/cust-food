@@ -1,0 +1,56 @@
+<form
+  *ngIf="!this.loading"
+  class="form"
+  [class.submitted]="submitted"
+  (submit)="onSubmit(loginForm)"
+  #loginForm="ngForm"
+>
+  <div class="loading" *ngIf="loading"></div>
+  <app-logo class="d-flex justify-content-center" type="form"></app-logo>
+  <app-simple-input
+    (getInput)="this.email = $event"
+    label="Email"
+    type="email"
+    placeholder="Email"
+    icon="email"
+    pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$"
+    required="true"
+    name="email"
+    (getInputStatus)="this.emailStatus = $event"
+  >
+  </app-simple-input>
+  <app-simple-input
+    (getInput)="this.password = $event"
+    label="Password"
+    type="password"
+    placeholder="Password"
+    icon="Password"
+    name="password"
+    required="true"
+    (getInputStatus)="this.passwordStatus = $event"
+  >
+  </app-simple-input>
+  <app-error-message
+    *ngIf="this.error"
+    [message]="this.errMessage"
+  ></app-error-message>
+  <div class="btn-group">
+    <button
+      type="submit"
+      class="btn primary"
+      [disabled]="this.emailStatus || this.passwordStatus"
+    >
+      LOGIN
+    </button>
+  </div>
+</form>
+<div *ngIf="!this.loading" class="d-flex justify-content-between">
+  <div class="register" [routerLink]="['/register']">
+    You don't have an Account, Register!
+  </div>
+  <div class="register" [routerLink]="['/forgotPassword']">
+    Forgot Password
+  </div>
+</div>
+<!--end .form-->
+<app-loading-spinner *ngIf="this.loading"></app-loading-spinner>

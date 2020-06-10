@@ -1,0 +1,11 @@
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+.title {
+  font-size: 18px;
+
+  font-weight: 550;
+}

@@ -1,0 +1,7 @@
+<div class="wrap {{next ? 'will-'+next : ''}}" [class.visible]="state.visible">
+  <div class="content-wrap">
+    <div class="editor-wrap" [ngSwitch]="state.editor">
+      <app-manage-regions-areas *ngSwitchCase="'manage-regions-areas'"></app-manage-regions-areas>
+    </div>
+  </div>
+</div>

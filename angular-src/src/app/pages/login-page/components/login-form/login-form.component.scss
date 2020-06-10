@@ -1,0 +1,38 @@
+@import "includes/variables";
+
+.form {
+  background-color: #ffffff;
+  width: 400px;
+  margin: 0 auto;
+  padding-top: 35px;
+  padding-left: 30px;
+  padding-right: 30px;
+  position: relative;
+  .error-tips {
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 18px;
+    color: $white;
+  }
+}
+
+app-select::ng-deep {
+  .select-trigger {
+    width: 100%;
+    border: $blue-primary;
+  }
+}
+
+.btn-group {
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 20px;
+  margin-bottom: 30px;
+  width: 170px;
+}
+.register {
+  font-size: 10px;
+  opacity: 60%;
+  cursor: pointer;
+}

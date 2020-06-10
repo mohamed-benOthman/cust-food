@@ -1,0 +1,98 @@
+@import 'includes/variables';
+
+.wrap {
+  display: flex;
+  align-items: center;
+
+  .avatar + .middle-text {
+    margin-left: 8px;
+  }
+
+  .middle-text + .dd {
+    margin-left: 16px;
+  }
+}
+
+.avatar {
+  display: flex;
+
+  width: 28px;
+  height: 28px;
+
+  background: $user-avatar-bg-color;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  flex: 0 0 auto;
+
+  &:before {
+    content: attr(data-text);
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-family: $alt-font;
+    color: $white;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.middle-text {
+  display: block;
+  font-family: $alt-font;
+  .fullname {
+    font-size: 12px;
+  }
+  .role {
+    font-size: 10px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: $blue-alt;
+  }
+}
+
+.dd-icon {
+  width: 16px;
+  height: 16px;
+  background: $bg-color url('/assets/i/sm-down-arrow-ic.png') center no-repeat;
+  border-radius: 8px;
+}
+
+@media (max-width: $mobile-br) {
+  .avatar {
+    width: 50px;
+    height: 50px;
+    &:before {
+      font-size: 17px;
+    }
+  }
+
+  .dd {
+    display: none;
+  }
+
+  .middle-text {
+    .fullname {
+      font-weight: 700;
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+
+    .role {
+      font-size: 11px;
+    }
+  }
+}

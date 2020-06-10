@@ -1,0 +1,37 @@
+@import "includes/variables";
+table {
+  border: 1px solid #ebebeb;
+  border-radius: 4px 4px 4px 4px;
+  opacity: 1;
+}
+.table {
+  font-size: 12px;
+  font-family: Arial;
+  font-weight: normal;
+}
+
+thead {
+  tr:first-child {
+    background: #f5f6f7 0% 0% no-repeat padding-box;
+    td {
+      color: #6b6d6f;
+      opacity: 1;
+      text-align: left;
+    }
+  }
+  tr {
+    td {
+      color: #6b6d6f;
+      opacity: 1;
+      text-align: left;
+    }
+  }
+}
+tbody {
+  tr {
+    td {
+      color: #000000;
+      opacity: 1;
+    }
+  }
+}

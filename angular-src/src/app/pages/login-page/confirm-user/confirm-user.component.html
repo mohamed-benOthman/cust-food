@@ -1,0 +1,27 @@
+<div *ngIf="!this.loading" class="login-content">
+  <form
+    *ngIf="!this.success"
+    class="form"
+    type="form"
+    #registerForm="ngForm"
+    (submit)="onSubmit(registerForm)"
+  >
+    <app-logo class="d-flex justify-content-center" type="form"></app-logo>
+
+    <div class="btn-group">
+      <input type="submit" class="btn primary" value="Reset Password" />
+    </div>
+  </form>
+
+  <div class="register" *ngIf="!this.loading && this.success">
+    {{ this.resultMessage }}
+    <span [routerLink]="['login']" style="font-size: 14px; font-weight: bold;">
+      <a> Go to Login Page? </a></span
+    >
+  </div>
+  <!--end .form-->
+</div>
+<app-loading-spinner
+  class="loadingSpinner"
+  *ngIf="this.loading"
+></app-loading-spinner>

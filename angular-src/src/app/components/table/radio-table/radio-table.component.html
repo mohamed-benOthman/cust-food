@@ -1,0 +1,91 @@
+<div class="bigContainer">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <td></td>
+
+        <td *ngFor="let item of this.labels" scope="col">{{ item }}</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of this.data">
+        <td class="radio">
+          <label class="radios">
+            <input type="radio" class="oldCheckbox" name="mix" [value]="item" />
+            <span class="checkmark"></span>
+          </label>
+        </td>
+        <td>Tank {{ item.sn }}</td>
+        <th>{{ item.productName }}</th>
+        <td>
+          <span
+            style="display: inline-block;"
+            *ngFor="let i of item.description; let index = index"
+            ><span style="margin-right: 0.5em;"
+              >{{ i.percentage }}{{ this.space }}
+            </span>
+            <span
+              class="normal"
+              *ngIf="index < item.description.length - 1"
+              class="strong"
+            >
+              {{ i.name }} +
+            </span>
+            <span
+              class="normal"
+              *ngIf="index === item.description.length - 1"
+              class="strong"
+            >
+              {{ i.name }} =
+            </span>
+          </span>
+          <span class="percentage" [style.color]="this.getRandomColors()"
+            >100%
+          </span>
+          <span>{{ item.productName }}</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <hr />
+
+  <form #myForm="ngForm">
+    <div>
+      <span>
+        <label for="exampleInputEmail1">Target Blend (MT)</label>
+        <input
+          ngModel
+          required
+          name="targetBlend"
+          type="text"
+          class="form-control"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+          placeholder="Enter "
+        />
+      </span>
+    </div>
+    <div>
+      <span style="margin-top: 25px;"
+        ><button
+          [disabled]="myForm.form.invalid"
+          type="button"
+          id="clearButton"
+          class="btn btn-light"
+        >
+          Clear
+        </button></span
+      >
+      <span style="margin-top: 25px;"
+        ><button
+          [disabled]="myForm.form.invalid"
+          type="button"
+          id="forecastButton"
+          class="btn btn-light"
+        >
+          View Forecast
+        </button></span
+      >
+    </div>
+  </form>
+</div>

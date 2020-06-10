@@ -1,0 +1,133 @@
+<app-container-header title="Search Recipes"> </app-container-header>
+<div class="myContainer" *ngIf="this.width > 1050">
+  <div class="currentInventory">
+    <div
+      style="
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding-right: 34px;
+        justify-content: space-between;
+        margin-bottom: 20px;
+      "
+    >
+      <div class="ingredients">Ingredients</div>
+      <div class="row">
+        <app-search-field
+          *ngIf="this.width > 1210"
+          width="300px"
+          style="margin-right: 10px;"
+          placeholder="Search ..."
+          (getInput)="showSearch($event)"
+        ></app-search-field>
+        <app-search-field
+          *ngIf="this.width <= 1210"
+          width="150px"
+          style="margin-right: 5px; margin-left: 15px;"
+          placeholder="Search ..."
+          (getInput)="showSearch($event)"
+        ></app-search-field>
+        <button
+          (click)="getRecipes()"
+          (click)="addWishList()"
+          class="btn primary add-transaction-btn"
+        >
+          <span class="fa fa-cutlery"></span>
+          <span class="is-not-mobile">Get Recipes</span>
+        </button>
+      </div>
+    </div>
+    <div
+      *ngIf="this.width > 1210"
+      fxLayoutGap="20px"
+      style="display: flex; flex-direction: row; flex-wrap: wrap;"
+    >
+      <app-food-icon
+        (changeStatus)="changeStatus($event)"
+        class="foodIcon"
+        *ngFor="let item of this.ingredients | ingredientsFilter: searchString"
+        [name]="item"
+        [icon]="item"
+      ></app-food-icon>
+    </div>
+    <div
+      *ngIf="this.width <= 1210"
+      fxLayoutGap="20px"
+      style="display: flex; flex-direction: row; flex-wrap: wrap;"
+    >
+      <app-food-icon
+        [width]="this.width"
+        (changeStatus)="changeStatus($event)"
+        class="foodIcon1"
+        *ngFor="let item of this.ingredients | ingredientsFilter: searchString"
+        [name]="item"
+        [icon]="item"
+      ></app-food-icon>
+    </div>
+  </div>
+
+  <div class="inventoryForecast">
+    <div class="notFound" *ngIf="noSearch">You will see Your recipes Here</div>
+    <div class="notFound" *ngIf="this.notFound && !noSearch">
+      No Recipes Found
+    </div>
+    <div *ngFor="let item of this.recipes">
+      <app-recipe-card
+        [label]="item.recipe.label"
+        [calories]="item.recipe.calories"
+        [imageSrc]="item.recipe.image"
+        [url]="item.recipe.url"
+        [ingredients]="item.recipe.ingredientLines"
+      ></app-recipe-card
+      ><br />
+    </div>
+    <app-loading-spinner
+      class="spinner"
+      *ngIf="this.loading"
+    ></app-loading-spinner>
+  </div>
+</div>
+
+<div *ngIf="this.width <= 1050" style="padding-right: 15px;">
+  <button
+    (click)="getRecipes()"
+    (click)="addWishList()"
+    style="width: 100%; margin-right: 30px;"
+    class="btn primary add-transaction-btn"
+  >
+    <span class="fa fa-cutlery"></span>
+    <span class="is-not-mobile">Get Recipes</span>
+  </button>
+  <br />
+  <div
+    fxLayoutGap="20px"
+    style="display: flex; flex-direction: row; flex-wrap: wrap;"
+  >
+    <app-food-icon
+      (changeStatus)="changeStatus($event)"
+      class="foodIcon1"
+      *ngFor="let item of this.ingredients | ingredientsFilter: searchString"
+      [name]="item"
+      [icon]="item"
+    ></app-food-icon>
+  </div>
+
+  <div style="text-align: center;" *ngIf="noSearch">
+    You will see Your recipes Here
+  </div>
+
+  <div *ngFor="let item of this.recipes">
+    <app-recipe-card
+      [label]="item.recipe.label"
+      [calories]="item.recipe.calories"
+      [imageSrc]="item.recipe.image"
+      [url]="item.recipe.url"
+      [ingredients]="item.recipe.ingredientLines"
+    ></app-recipe-card
+    ><br />
+  </div>
+  <app-loading-spinner
+    class="spinner"
+    *ngIf="this.loading"
+  ></app-loading-spinner>
+</div>

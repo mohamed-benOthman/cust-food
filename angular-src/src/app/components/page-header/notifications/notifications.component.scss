@@ -1,0 +1,31 @@
+@import 'includes/variables';
+
+.notifications-bell {
+  display: block;
+  width: 14px;
+  height: 16px;
+  position: relative;
+
+  background: url('/assets/i/bell@2x.png') center no-repeat;
+  background-size: contain;
+
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -3px;
+    right: -3px;
+    background: $gray-primary;
+    width: 8px;
+    height: 8px;
+    border-radius: 8px;
+    border: 1px solid $white;
+  }
+
+  &[data-has-notifications] {
+    &:before {
+      content: "";
+      background: $notification-color;
+    }
+  }
+}

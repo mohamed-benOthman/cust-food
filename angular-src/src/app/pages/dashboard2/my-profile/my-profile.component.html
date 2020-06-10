@@ -1,0 +1,87 @@
+<app-container-header title="My Profile"> </app-container-header>
+<div class="myContainer" *ngIf="this.width > 1050">
+  <div class="currentInventory">
+    <div
+      style="
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding-right: 34px;
+        justify-content: space-between;
+        margin-bottom: 20px;
+      "
+    >
+      <div class="ingredients">Last Reasearchs</div>
+    </div>
+    <div *ngFor="let item of this.lastReasearch">
+      <div
+        fxLayoutGap="20px"
+        style="display: flex; flex-direction: row; flex-wrap: wrap;"
+      >
+        <app-food-icon
+          class="foodIcon"
+          *ngFor="let item1 of makeArray(item)"
+          [name]="item1"
+          [icon]="item1"
+        ></app-food-icon>
+      </div>
+      <hr />
+    </div>
+  </div>
+  <div class="inventoryForecast">
+    <div class="ingredients mb-2">WishList</div>
+    <div *ngFor="let item of this.recipes">
+      <app-recipe-card
+        [label]="item.label"
+        [calories]="item.calories"
+        [imageSrc]="item.image"
+        [url]="item.url"
+        [ingredients]="item.ingredientLines"
+      ></app-recipe-card
+      ><br />
+    </div>
+    <app-loading-spinner
+      class="spinner"
+      *ngIf="this.loading"
+    ></app-loading-spinner>
+  </div>
+</div>
+
+<div *ngIf="this.width <= 1050" style="padding-right: 15px;">
+  <div>
+    <div>
+      <div class="ingredients">Last Reasearchs</div>
+    </div>
+    <div *ngFor="let item of this.lastReasearch">
+      <div
+        fxLayoutGap="20px"
+        style="display: flex; flex-direction: row; flex-wrap: wrap;"
+      >
+        <app-food-icon
+          class="foodIcon"
+          *ngFor="let item1 of makeArray(item)"
+          [name]="item1"
+          [icon]="item1"
+        ></app-food-icon>
+      </div>
+      <hr />
+    </div>
+  </div>
+  <div>
+    <div class="ingredients mb-2">WishList</div>
+    <div *ngFor="let item of this.recipes">
+      <app-recipe-card
+        [label]="item.label"
+        [calories]="item.calories"
+        [imageSrc]="item.image"
+        [url]="item.url"
+        [ingredients]="item.ingredientLines"
+      ></app-recipe-card
+      ><br />
+    </div>
+    <app-loading-spinner
+      class="spinner"
+      *ngIf="this.loading"
+    ></app-loading-spinner>
+  </div>
+</div>

@@ -1,0 +1,76 @@
+<div class="wrap">
+  <div class="content-wrap topbar">
+    <div
+      class="toggle-mobile-menu is-mobile"
+      (click)="toggleMenu()"
+      [class.is-open]="menu.isOpen"
+    >
+      <span class="ic ic-menu" [class.is-open]="menu.isOpen"></span>
+    </div>
+    <div class="flex left header-inputs">
+      <ng-template [ngIf]="regionData">
+        <app-select
+          [options]="regionData.regions"
+          [selected]="regionData.region"
+          (selectedChange)="changeLocation('region', $event)"
+          labelKey="name"
+          icon="glob"
+          *appIfRole="'admin'"
+        ></app-select>
+        <app-select
+          [options]="regionData.areas"
+          [selected]="regionData.area"
+          (selectedChange)="changeLocation('area', $event)"
+          labelKey="name"
+          icon="location"
+        ></app-select>
+        <app-select
+          [options]="units"
+          [selected]="unit"
+          (selectedChange)="changeUnit($event)"
+          icon="db"
+          *appIfRole="'scheduler marketer'"
+        ></app-select>
+        <div class="settings-btn" (click)="editRegions()" *appIfRole="'admin'">
+          <div class="ic ic-cog"></div>
+        </div>
+      </ng-template>
+    </div>
+    <div class="flex center is-mobile" [hidden]="!menu.isOpen">
+      <app-logo class="logo"></app-logo>
+    </div>
+    <div class="right flex is-not-mobile">
+      <app-logo class="logo"></app-logo>
+      <div class="user-data flex">
+        <app-notifications
+          class="notif-el"
+          [hasNotifications]="true"
+        ></app-notifications>
+        <app-user-profile class="profile-el" [user]="user"></app-user-profile>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-wrap nav-wrap">
+    <app-navigation></app-navigation>
+    <button
+      class="btn primary add-transaction-btn"
+      *appIfRole="'scheduler marketer'"
+    >
+      <span class="ic ic-add"></span>
+      <span class="is-not-mobile">Transaction</span>
+    </button>
+  </div>
+
+  <div class="content-wrap">
+    <app-mobile-menu class="mobile-menu is-mobile" [isOpen]="menu.isOpen">
+      <div class="user-data flex">
+        <app-user-profile class="profile-el" [user]="user"></app-user-profile>
+        <app-notifications
+          class="notif-el"
+          [hasNotifications]="true"
+        ></app-notifications>
+      </div>
+    </app-mobile-menu>
+  </div>
+</div>

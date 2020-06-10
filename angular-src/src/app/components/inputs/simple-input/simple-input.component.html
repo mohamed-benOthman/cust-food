@@ -1,0 +1,35 @@
+<div class="inputWithIcon">
+  <label>{{ this.label }}</label>
+  <input
+    [type]="this.type"
+    (ngModelChange)="this.getInputValue($event)"
+    (ngModelChange)="this.getStatus(input.invalid)"
+    [ngModel]="this.inputValue"
+    [name]="this.name"
+    [placeholder]="this.placeholder"
+    ngModel
+    #input="ngModel"
+    [required]="this.required"
+    [pattern]="this.pattern"
+  />
+  <i
+    *ngIf="this.icon.toLowerCase() == 'email'"
+    class="fa fa-envelope"
+    aria-hidden="true"
+  ></i>
+  <i
+    *ngIf="this.icon.toLowerCase() == 'password'"
+    class="fa fa-unlock-alt"
+    aria-hidden="true"
+  ></i>
+  <i
+    *ngIf="this.icon.toLowerCase() == 'person'"
+    class="fa fa-user"
+    aria-hidden="true"
+  ></i>
+  <small
+    *ngIf="input.invalid && input.touched"
+    class="alert-warning d-flex justify-content-center"
+    >Invalid Input</small
+  >
+</div>

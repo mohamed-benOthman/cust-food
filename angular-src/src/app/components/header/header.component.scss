@@ -1,0 +1,276 @@
+@import "includes/variables";
+
+.flex {
+  display: flex;
+  align-items: center;
+  &.center {
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+.wrap {
+  background: $content-box-bg;
+  padding-top: 2px;
+
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: $blue-primary;
+  }
+}
+
+.content-wrap {
+  display: flex;
+  align-items: center;
+
+  .left {
+    width: 50%;
+  }
+
+  .right {
+    width: 50%;
+    justify-content: space-between;
+  }
+
+  .notif-el + .profile-el {
+    margin-left: 30px;
+  }
+}
+
+.topbar {
+  height: $page-header-height;
+  position: relative;
+}
+
+.nav-wrap {
+  height: $navigation-height;
+  border-top: 1px solid $bg-color;
+}
+
+.add-transaction-btn {
+  display: flex;
+  margin-left: auto;
+  justify-content: center;
+  align-items: center;
+  .ic {
+    width: 9px;
+    margin-right: 5px;
+  }
+}
+
+.header-inputs {
+  min-width: 375px;
+  app-select + app-select {
+    margin-left: 10px;
+  }
+}
+
+.settings-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+  border: 1px solid $gray-light;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  &:hover,
+  &:focus,
+  &:active {
+    border-color: $blue-primary;
+  }
+}
+
+.toggle-mobile-menu {
+  display: block;
+  margin-right: 16px;
+}
+
+.mobile-menu {
+  display: block;
+  height: calc(100vh - #{$page-header-height});
+  width: 100%;
+
+  position: absolute;
+  top: $page-header-height;
+  left: 0;
+
+  background: $content-box-bg;
+
+  &:not(.is-open) {
+    display: none;
+  }
+}
+
+// @media (max-width: $mobile-br) {
+//   .toggle-mobile-menu {
+//     &.is-open + .header-inputs {
+//       display: none;
+//     }
+//   }
+
+//   .content-wrap {
+//     padding: 0 16px;
+//     .left,
+//     .right {
+//       width: 100%;
+//     }
+//   }
+
+//   .header-inputs {
+//     min-width: auto;
+//     justify-content: space-between;
+//   }
+
+//   .user-data {
+//     justify-content: space-between;
+//     padding: 0 16px;
+//   }
+
+//   .add-transaction-btn {
+//     height: 34px;
+//     width: 34px;
+//     min-width: auto;
+//   }
+// }
+#refreshIcon {
+  width: 12px;
+  margin-right: 4px;
+}
+.user-data {
+  &:hover {
+    color: $blue-primary;
+  }
+  color: #6b6d6f;
+  #userName {
+    font-size: 18px;
+    font-weight: 500;
+  }
+  span {
+    i {
+      cursor: pointer;
+      font-size: 20px;
+    }
+  }
+}
+@import "includes/variables";
+
+nav {
+  display: flex;
+  width: 100%;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 600;
+}
+
+ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin: 0 -22px;
+  li {
+    display: flex;
+    align-items: center;
+    color: $link-color;
+    margin: 0 22px;
+    padding-left: 4px;
+    padding-right: 4px;
+
+    a {
+      display: flex;
+      position: relative;
+
+      &:after {
+        display: block;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        height: 2px;
+        margin-top: 5px;
+        background: $blue-primary;
+      }
+
+      &.active:after {
+        content: "";
+      }
+      &.active {
+        font-weight: 700;
+        color: $blue-alt;
+      }
+      &:hover {
+        padding-bottom: 2px;
+        color: $blue-primary;
+        text-decoration: none;
+      }
+    }
+    &:hover {
+      color: $blue-primary;
+      text-decoration: none;
+
+      border-radius: 1px;
+    }
+  }
+}
+
+.active-route {
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  color: $blue-primary;
+  font-weight: 600;
+  .ic {
+    margin-left: 9px;
+  }
+}
+
+// @media (max-width: $mobile-br) {
+//   nav {
+//     position: fixed;
+//     top: $page-header-height + $navigation-height;
+//     left: 0;
+//     width: 100%;
+//     background: $content-box-bg;
+//     font-size: 14px;
+//     font-weight: normal;
+//     &:not(.is-open) {
+//       display: none;
+//     }
+//   }
+
+//   ul {
+//     flex-direction: column;
+//     margin: 0;
+//     line-height: 40px;
+//     width: 100%;
+
+//     li {
+//       &:hover {
+//         background: $blue-ternary;
+//         color: $text-color;
+//         margin: 0;
+//         padding: 0 21px;
+//         font-size: 15px;
+//       }
+
+//       a {
+//         width: 100%;
+//         &:after {
+//           display: none;
+//         }
+//         &.active {
+//           font-weight: 900;
+//           color: $blue-alt;
+//         }
+//       }
+//     }
+//   }
+// }

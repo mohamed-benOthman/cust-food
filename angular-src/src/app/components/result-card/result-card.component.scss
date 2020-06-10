@@ -1,0 +1,66 @@
+@import "includes/variables";
+
+.container {
+  background: #f5f6f7 0% 0% no-repeat padding-box;
+  border-radius: 4px;
+  opacity: 1;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-right: 16px;
+  padding-left: 24px;
+}
+.label {
+  margin-bottom: 16px;
+  color: #0b2d71;
+  font-size: 12px;
+  font-weight: bold;
+}
+.title {
+  color: #769231;
+  font-size: 11px;
+  font-weight: bold;
+}
+.mix {
+  margin-top: 12px;
+  font-size: 12px;
+  font-weight: normal;
+}
+.availability {
+  font-size: 11px;
+  font-style: italic;
+  color: #6b6d6f;
+}
+.unity {
+  font-size: 14px;
+  font-weight: normal;
+}
+.date {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: bolder;
+  font-style: italic;
+  color: #000000;
+}
+.myRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.myRow2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: -4px;
+}
+.total {
+  font-size: 24px;
+  font-weight: bold;
+  color: #000000;
+}
+.maxOrder {
+  font-size: 12px;
+  color: #6b6d6f;
+}
+.bigContainer {
+  padding-top: 16px;
+}

@@ -1,0 +1,69 @@
+<div class="container">
+  <div
+    style="display: flex; flex-direction: row; justify-content: space-between;"
+  >
+    <h4>{{ this.label }}</h4>
+    <div>
+      <div style="display: flex; flex-direction: row-reverse;">
+        <button
+          *ngIf="!this.remove"
+          class="btn primary add-transaction-btn justify-content-lg-between"
+        >
+          <span class="fa fa-plus" style="margin-right: 3px;"></span>
+          <span class="is-not-mobile" (click)="addWishList()"
+            >Add to WishList</span
+          >
+        </button>
+        <button
+          *ngIf="this.remove"
+          class="btn btn-danger add-transaction-btn justify-content-lg-between"
+        >
+          <span class="fa fa-ban" style="margin-right: 3px;"></span>
+          <span class="is-not-mobile" (click)="deleteWishList()"
+            >Remove from WishList</span
+          >
+        </button>
+      </div>
+      <br />
+    </div>
+  </div>
+  <div
+    style="display: flex; flex-direction: row; justify-content: space-between;"
+  >
+    <table style="border: 4px;">
+      <tr>
+        <th>Calories:</th>
+        <td>{{ this.calories }} calories</td>
+      </tr>
+      <tr>
+        <th style="width: 6vw; vertical-align: top;">Ingredients:</th>
+        <td
+          style="
+            height: 10vh;
+            width: 44vw;
+            vertical-align: top;
+            overflow: hidden;
+          "
+        >
+          <small> {{ this.ingredients }}</small>
+        </td>
+      </tr>
+    </table>
+
+    <div
+      class="image"
+      [ngStyle]="{
+        'background-image': 'url(' + this.imageSrc + ')'
+      }"
+    ></div>
+  </div>
+  <div style="display: flex; flex-direction: row;">
+    <th style="display: inline-block;">
+      <a [href]="this.url"
+        >How To Cook
+        <span> <i class="fa fa-arrow-right" aria-hidden="true"> </i></span
+      ></a>
+    </th>
+    <div></div>
+  </div>
+</div>

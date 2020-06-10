@@ -1,0 +1,23 @@
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <td><img src="../../../../assets/i/checkbox.png" /></td>
+
+      <td *ngFor="let item of this.labels" scope="col">{{ item }}</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of this.tanksMap | keyvalue">
+      <td>
+        <app-checkbox
+          (change)="select(item.key)"
+          #myCheckBox
+          [checked]="item.value"
+        ></app-checkbox>
+      </td>
+      <td>Tank {{ item.key.id }}</td>
+      <td>{{ item.key.productName }}</td>
+      <th>{{ item.key.currentAvailability }}</th>
+    </tr>
+  </tbody>
+</table>

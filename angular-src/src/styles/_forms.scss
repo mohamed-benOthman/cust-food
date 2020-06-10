@@ -1,0 +1,33 @@
+@import "includes/variables.scss";
+
+.btn {
+  font-family: $alt-font;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  font-weight: 700;
+  color: $white;
+  background: $link-color;
+  min-width: 120px;
+  height: 36px;
+  padding: 5px 10px;
+  border: 1px solid currentColor;
+  border-radius: 4px;
+  transition: 0.15s ease 0.05s;
+  cursor: pointer;
+
+  &.outline {
+    color: $link-color;
+    background: none;
+    &:hover {
+      border-color: darken($link-color, 10%);
+    }
+  }
+
+  &.primary {
+    background: $blue-primary;
+    &:hover {
+      background: darken($blue-primary, 5%);
+    }
+  }
+}

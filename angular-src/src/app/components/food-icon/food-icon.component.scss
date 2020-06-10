@@ -1,0 +1,94 @@
+.container {
+  border: 2px solid #0066b2;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  &:hover {
+    background-color: #0066b2;
+  }
+}
+.container1 {
+  border: 2px solid #0066b2;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  background-color: #0066b2;
+}
+.container:hover > .content {
+  filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(290deg)
+    brightness(109%) contrast(101%);
+}
+.container:hover > .name {
+  color: #ffffff;
+  margin-bottom: 2px;
+  margin-top: -10%;
+  font-weight: 600;
+}
+.container:active > .content {
+  filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(290deg)
+    brightness(109%) contrast(101%);
+}
+.container:active > .name {
+  color: #ffffff;
+  margin-bottom: 2px;
+  margin-top: -10%;
+  font-weight: 600;
+}
+.container:before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+  /* initial ratio of 1:1*/
+}
+.container1:before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+  /* initial ratio of 1:1*/
+}
+.content {
+  padding: 0px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: calc((100% / 3) * 2);
+  width: calc(100% / 2);
+  background-repeat: no-repeat;
+  filter: invert(20%) sepia(94%) saturate(7237%) hue-rotate(195deg)
+    brightness(98%) contrast(101%);
+}
+.content1 {
+  padding: 0px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: calc((100% / 3) * 2);
+  width: calc(100% / 2);
+  background-repeat: no-repeat;
+  filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(290deg)
+    brightness(109%) contrast(101%);
+}
+.name {
+  color: #0066b2;
+  margin-bottom: 2px;
+  margin-top: -10%;
+  font-weight: 600;
+  font-size: 1vw;
+}
+.name1 {
+  color: #ffffff;
+  margin-bottom: 2px;
+  margin-top: -10%;
+  font-weight: 600;
+}
+@media only screen and (max-width: 900px) {
+  .name {
+    color: #0066b2;
+    margin-bottom: 2px;
+    margin-top: -10%;
+    font-weight: 600;
+    font-size: 3vw;
+  }
+}

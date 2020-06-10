@@ -1,0 +1,25 @@
+.container {
+  border: 2px solid #0066b2;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 20px;
+  position: relative;
+  &:hover {
+    background-color: #f5f6f7;
+  }
+}
+h4 {
+  font-weight: 520;
+  color: #0066b2;
+}
+.image {
+  height: 10vw;
+  width: 10vw;
+}
+th,
+td {
+  color: #0066b2;
+}
+button {
+  width: 8.6vw;
+}

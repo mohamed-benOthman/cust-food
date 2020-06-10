@@ -1,0 +1,50 @@
+.ic {
+  display: block;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  &.ic-arrow-down---sm--gray {
+    background-image: url('/assets/i/sm-down-arrow-ic-gray.png');
+    width: 11px;
+    height: 7px;
+  }
+
+  &.ic-add {
+    background-image: url('/assets/i/ic-add.png');
+    width: 12px;
+    height: 12px;
+  }
+
+  &.ic-glob {
+    background-image: url('/assets/i/ic-glob.png');
+    width: 14px;
+    height: 14px;
+  }
+
+  &.ic-location {
+    background-image: url('/assets/i/ic-location.png');
+    width: 12px;
+    height: 14px;
+  }
+
+  &.ic-db {
+    background-image: url('/assets/i/ic-db.png');
+    width: 12px;
+    height: 14px;
+  }
+
+  &.ic-cog {
+    background-image: url('/assets/i/ic-cog.png');
+    width: 16px;
+    height: 16px;
+  }
+
+  &.ic-menu {
+    background-image: url('/assets/i/ic-menu.png');
+    width: 18px;
+    height: 12px;
+    &.is-open {
+      background-image: url('/assets/i/ic-menu-open.png');
+    }
+  }
+}

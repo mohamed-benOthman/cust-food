@@ -1,0 +1,26 @@
+.checkmark {
+  display: inline-block;
+  margin-top: 1px;
+  bottom: 0px;
+  width: 16px;
+  cursor: pointer;
+  height: 16px;
+  background-color: transparent;
+  border: 1px solid #ebebeb;
+  border-radius: 4px;
+  opacity: 1;
+  &:hover {
+    background-color: #f5f6f7;
+  }
+}
+
+.oldCheckbox {
+  display: none;
+}
+.oldCheckbox:checked ~ .checkmark {
+  content: url("/assets/i/checkbox.png");
+}
+label {
+  margin: 0px;
+  padding: 0px;
+}

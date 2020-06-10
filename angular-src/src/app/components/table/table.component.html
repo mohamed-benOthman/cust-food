@@ -1,0 +1,26 @@
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <td *ngFor="let item of this.labels" scope="col">{{ item.label }}</td>
+    </tr>
+    <tr>
+      <td *ngFor="let item of this.labels" scope="col">{{ item.unity }}</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of this.data">
+      <td>Tank {{ item.id }}</td>
+      <td>{{ item.productName }}</td>
+      <td>{{ item.api }}</td>
+      <td>{{ item.viscosity }}</td>
+      <td>{{ item.sulfur }}</td>
+      <td>{{ item.flashPt }}</td>
+      <td>{{ item.water }}</td>
+      <td>{{ item.alAndsl }}</td>
+      <td>{{ item.mcr }}</td>
+      <td>{{ item.na }}</td>
+      <td>{{ item.van }}</td>
+      <td>{{ item.ccai }}</td>
+    </tr>
+  </tbody>
+</table>

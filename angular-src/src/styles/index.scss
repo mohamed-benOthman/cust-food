@@ -1,0 +1,51 @@
+@import 'reset';
+@import 'includes/fonts';
+@import 'includes/variables';
+@import 'includes/icons';
+@import 'forms';
+
+html,
+body {
+  font-family: $main-font;
+  font-size: 16px;
+  background: $bg-color;
+  color: $text-color;
+}
+
+.no-overflow {
+  overflow: hidden !important;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+.content-wrap {
+  max-width: $content-width;
+  margin: 0 auto;
+  padding: 0 60px;
+}
+
+.section-title {
+  font-family: $main-font;
+  font-weight: 700;
+  color: $blue-alt;
+  font-size: 20px;
+}
+
+
+@media (min-width: $mobile-br + 1) {
+  .is-mobile {
+    display: none !important;
+  }
+}
+
+@media (max-width: $mobile-br) {
+  .is-not-mobile {
+    display: none !important;
+  }
+
+  .content-wrap {
+    padding: 0 16px;
+  }
+}

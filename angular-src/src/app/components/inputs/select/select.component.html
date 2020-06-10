@@ -1,0 +1,23 @@
+<div class="dropdown">
+  <button type="button" class="select-trigger" (click)="open(dropdown, origin)" #origin [class.is-open]="isOpen">
+    <span class="ic ic-{{icon}}" *ngIf="icon"></span>
+    {{ label }}
+    <div class="down-icon"></div>
+  </button>
+
+  <ng-template #dropdown>
+    <div class="select-menu">
+      <div class="select-menu-inner">
+        <div
+          *ngFor="let option of options"
+          class="select-item"
+          [class.active]="isActive(option)"
+          (click)="select(option)"
+        >
+          <ng-template [ngIf]="!optionTpl">{{option[labelKey]}}</ng-template>
+          <ng-template *ngTemplateOutlet="optionTpl; context: {$implicit: option}"></ng-template>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</div>

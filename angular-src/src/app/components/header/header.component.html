@@ -1,0 +1,47 @@
+<div class="wrap">
+  <div style="padding: 25px;">
+    <div class="flex center is-mobile" [hidden]="!menu.isOpen">
+      <app-logo type="form"></app-logo>
+    </div>
+
+    <div style="display: flex; flex-direction: row-reverse;">
+      <app-logo
+        type="form"
+        style="
+          position: absolute;
+          left: 50%;
+          transform: translate(-52%, -15%);
+          margin-bottom: 5px;
+        "
+      ></app-logo>
+      <div class="user-data flex">
+        <span class="mr-2" id="userName">{{ this.userName }}</span>
+        <span (click)="logout()" style="display: inline-block;">
+          <i class="fa fa-sign-out"></i
+        ></span>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="content-wrap nav-wrap"
+    style="padding-top: 20px; padding-bottom: 20px;"
+  >
+    <nav>
+      <ul>
+        <li *ngFor="let page of pages">
+          <a
+            [routerLink]="[page.path]"
+            routerLinkActive="active"
+            (click)="toggleMenu(false)"
+            >{{ page.title }}</a
+          >
+        </li>
+      </ul>
+    </nav>
+    <button (click)="reset()" class="btn primary add-transaction-btn">
+      <span class="fa fa-refresh" id="refreshIcon"></span>
+      <span class="is-not-mobile">Refresh</span>
+    </button>
+  </div>
+</div>

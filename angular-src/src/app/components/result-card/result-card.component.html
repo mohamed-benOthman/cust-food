@@ -1,0 +1,22 @@
+<div class="bigContainer">
+  <div class="label">Result</div>
+  <div class="container">
+    <div class="title">AVAILABLE</div>
+    <div class="myRow">
+      <div class="mix">{{ this.mix }}</div>
+      <div>
+        <div class="total">
+          {{ this.maxOrder
+          }}<span class="unity">{{ this.unity | uppercase }}</span>
+        </div>
+      </div>
+    </div>
+    <div class="myRow2">
+      <div class="availability">
+        Blend will be vailable on
+        <span class="date">{{ this.date }}</span>
+      </div>
+      <div class="maxOrder">Maximum Order</div>
+    </div>
+  </div>
+</div>

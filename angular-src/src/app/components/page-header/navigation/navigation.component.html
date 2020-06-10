@@ -1,0 +1,18 @@
+<div class="wrap">
+  <div class="active-route is-mobile" (click)="toggleMenu()">
+    {{ activeRoute?.title }}
+    <span class="ic ic-arrow-down---sm--gray"></span>
+  </div>
+  <nav [class.is-open]="menu.isOpen">
+    <ul>
+      <li *ngFor="let page of pages">
+        <a
+          [routerLink]="[page.path]"
+          routerLinkActive="active"
+          (click)="toggleMenu(false)"
+          >{{ page.title }}</a
+        >
+      </li>
+    </ul>
+  </nav>
+</div>
