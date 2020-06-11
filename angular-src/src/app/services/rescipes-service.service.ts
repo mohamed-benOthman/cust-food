@@ -6,8 +6,8 @@ import { async } from '@angular/core/testing';
   providedIn: 'root',
 })
 export class RescipesServiceService {
-  private url = '/api/recipe';
-  private userUrl = '/api/user';
+  private url = 'api/recipe';
+  private userUrl = 'api/user';
   constructor(private http: HttpClient) {}
   getRecipes(ingredientString: string) {
     const ingredients = {

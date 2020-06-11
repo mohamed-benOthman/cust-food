@@ -9,7 +9,7 @@ import { EmailValidator } from '@angular/forms';
   providedIn: 'root',
 })
 export class AuthenticationService {
-  private localHost = '/api/user/';
+  private localHost = 'api/user/';
   constructor(private http: HttpClient) {}
   public register(user: User) {
     return this.http.post(this.localHost, user);

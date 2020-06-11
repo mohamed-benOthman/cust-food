@@ -30,8 +30,9 @@ export class MyProfileComponent implements OnInit {
   lastReasearch: any;
   makeArray(value: string) {
     const arr = value.trim().split(',');
+
     console.log(arr);
-    arr.pop();
+    if (arr.length > 1) arr.pop();
     return arr;
   }
   ngOnInit(): void {
